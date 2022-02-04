@@ -23,7 +23,10 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.cover {
+  background-size: cover;
+  background-position: 'center',
+}
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +38,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+img{
+  width: 100%;
+  display: block;
+}
+body{
+  background:#000;
+}
+.small{
+  max-height: 100px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.poster{
+  max-height: 270px;
+  margin-right: 14px;
+  width: 32%;
+  display: block;
+  cursor: pointer;
+}
+.poster:hover{
+  transform:scale(1.1);
+}
+.small:hover{
+  transform:scale(1.1);
+}
+.silder{
+  display:flex;
+  padding:20px;
+  overflow-x:scroll;
+  overflow-y:hidden;
+    
 }

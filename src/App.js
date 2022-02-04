@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './Componets/Header';
+import { ComedyMovies,HorrorMovies,originals,action,RomanceMovies} from '../src/Componets/Urls';
+import Spotlight from './Componets/Spotlight';
+import Rowposter from './Componets/Rowposter';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Spotlight />
+      <Rowposter url={originals} title="Netfilx orginals" />
+      <Rowposter url={action} title="Action" isSmall/>
+      <Rowposter url={ComedyMovies} title="ComedyMovies" isSmall/>
+      <Rowposter url={HorrorMovies} title="HorrorMovies" isSmall/>
+      <Rowposter url={RomanceMovies} title="RomanceMovies" isSmall/>
+    </>
+  
   );
 }
 
