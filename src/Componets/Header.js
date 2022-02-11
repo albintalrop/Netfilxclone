@@ -1,10 +1,25 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import logo from "../../src/images/Netflixlogo.png"
 import styled from "styled-components";
 
-export default function () {
+
+export default function Header() {
+    const[show,setShow]=useState(false)
+    
+    useEffect(() =>{
+        window.addEventListener("scroll",scrolling)
+    })
+    const scrolling = () =>{
+        if(window.scrollY > 100) {
+            setShow(true)
+        }else{
+            setShow(false)
+        }
+
+    }
+    
   return (
-      <Headercontainer>
+      <Headercontainer className={`${show &&"navblack"}`}>
           <Headerwrapper>
               <Leftcontainer>
                   <Logo src={logo}></Logo>
@@ -17,8 +32,10 @@ export default function () {
     );
 }
 const Headercontainer=styled.div`
-    padding-top:3%;
-    position:fixed;`
+    padding-top:1%;
+    top: 0;
+    position:fixed;
+`
 const Headerwrapper=styled.div`
     width:90%;
     margin:0 auto;
@@ -28,12 +45,12 @@ const Headerwrapper=styled.div`
 const Leftcontainer=styled.div`
     `
 const Logo =styled.img`
-    width:10%;`
+    width:8%;`
 const Right=styled.div`
         margin-right: -173px;
     
 `
 const Avathar=styled.img`
-    width:20%;
+    width:15%;
     `
 

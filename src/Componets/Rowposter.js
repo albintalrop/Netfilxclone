@@ -8,6 +8,7 @@ export default function Rowposter(props) {
     const [movies, setMovies] = useState([]);
 
     const [UrlId,setUrlId] =useState("")
+    const [showTrailer,setShowTrailer] =useState(false)
     useEffect(() => {
         axios
             .get(props.url)
@@ -28,7 +29,13 @@ export default function Rowposter(props) {
         } 
     }
     const handleMovie =(id)=>{
+        if(showTrailer == true) {
+            setShowTrailer(false)
+        } else {
+            setShowTrailer(true)
+        }
         console.log("hhhh");
+        setUrlId("")
         axios.get(`movie/${id}/videos?api_key=${API_KEY}&language=en-US`).then(response=>{
             if(response.data.results.length!==0){
                 setUrlId(response.data.results[0])
@@ -41,7 +48,7 @@ export default function Rowposter(props) {
 
     }
 
-  return (
+  return (                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
       <Rowcontainer>
           <Rowwrapper>
               <Title>{props.title}</Title>
@@ -51,7 +58,7 @@ export default function Rowposter(props) {
                         
                     )}
               </Posters>
-              {UrlId && <Youtube videoId={UrlId.key} opts={opts} />}
+              {showTrailer && UrlId && <Youtube videoId={UrlId.key} opts={opts} />}
           </Rowwrapper>   
       </Rowcontainer>
   );
@@ -67,11 +74,13 @@ const Posters=styled.div`
     display: flex;
     width: 100%;
     overflow-x: scroll;
+    overflow-y: hidden;
     &::-webkit-scrollbar{
         display: none;
     }
     
     `
 const Post=styled.img`
+
     
 `

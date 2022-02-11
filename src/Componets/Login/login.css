@@ -1,0 +1,76 @@
+.loginscreen{
+    position:relative;
+    height: 100vh;
+    background:url("../../images/bg.jpg") ;
+}
+.logo{
+    position:fixed;
+    left: 0;
+    width: 150px;
+    object-fit: contain;
+    padding-left: 20px;
+    top:28px;
+
+
+}
+.loginscreen_button{
+    position: fixed;
+    right: 20px;
+    top:28px;
+    padding:10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: red;
+    border: none;
+    cursor: pointer;
+}
+.loginScreenbody{
+    z-index: 1;
+    color: #fff;
+    padding: 20px;
+    position: absolute;
+    top: 24%;
+    left: 32%;
+    margin: 0 auto;
+
+}
+h1{
+    color: #fff;
+    font-size:20px;
+    font-weight: 400;
+    margin-bottom:20px;
+ 
+
+}
+.get >form >input{ 
+    padding: 11px 15px;
+    outline-width: 0 ;
+   
+    width: 50%;
+
+
+}
+.get{
+    width: 80%;
+    margin:0 auto;
+}
+form{
+    margin: 0 auto;
+    display: flex;
+}
+.getbutton{
+    padding: 11px 15px;
+    outline-width: 0;
+    width: 29%;
+    border: none;
+    background: red;
+    color: #fff;
+    font-weight: 800;
+    display: block;
+}
+.logo{
+    width: 10%;
+}
+h2{
+    text-align: center;
+}

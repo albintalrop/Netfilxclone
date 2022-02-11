@@ -5,18 +5,19 @@ import {API_KEY,imageUrl} from "../Componets/constants/constants"
 
 
 export default function Spotlight() {
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState([0]);
 
 
     useEffect(() => {
         axios
             .get(`trending/all/week?api_key=${API_KEY}&language=en-US`)
             .then((response) => {
-                setMovies(response.data.results[0])
-                console.log(movies);
+                setMovies(response.data.results[
+                    Math.floor(Math.random() * response.data.results.length )
+                ])
             })
-            .catch((error) => {
-                console.log(error);
+            .catch((e) => {
+                console.log(e);
             });
     }, []);
     const myStyle={
@@ -51,12 +52,12 @@ const Content=styled.div`
     `
 const Head=styled.h1`
     font-size: 35px;
+    color: #fff;
     `
 const Buttons=styled.div`
     display:flex;
     width:30%;
-    margin-top:60px;
-    
+    margin-top: 18px;
     `
 const Fristbutton=styled.button`
     display:block;
@@ -70,6 +71,7 @@ const Fristbutton=styled.button`
     background-color: rgba(51,51,51,.5);
     &:hover{
         background: #FFF;
+        color: #000;
 
     }
     `
@@ -85,6 +87,7 @@ const Secondbutton=styled.button`
     background-color: rgba(51,51,51,0.5);
     &:hover{
         background: #FFF;
+        color: #000;
 
     }
     `
