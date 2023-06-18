@@ -78,7 +78,7 @@ export default function Singnuppage() {
                         Signin
                     </div>
                     <h3>{err}</h3>
-                    <h4>New to Netfil ? Sign up now </h4>
+                    <h4>New to Netfilx 2.0? Sign up now </h4>
                 </form>
             </div>
         </div>
