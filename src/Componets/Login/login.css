@@ -47,6 +47,7 @@ h1{
     outline-width: 0 ;
    
     width: 50%;
+    margin-bottom: 10px;
 
 
 }
@@ -55,11 +56,15 @@ h1{
     margin:0 auto;
 }
 form{
-    margin: 0 auto;
+    margin:  auto;
     display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .getbutton{
-    padding: 11px 15px;
+    /* padding: 11px 15px; */
     outline-width: 0;
     width: 29%;
     border: none;
@@ -67,6 +72,8 @@ form{
     color: #fff;
     font-weight: 800;
     display: block;
+    margin: 0 auto;
+    align-items: center;
 }
 .logo{
     width: 10%;

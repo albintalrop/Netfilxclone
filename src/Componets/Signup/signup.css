@@ -23,8 +23,9 @@
     background:url("../../images/bg.jpg") ;
     display: flex;
     align-items: center;
+    height: 100vh;
 }
-button{
+.button{
     padding: 10px;
     background: red;
     color: #fff;

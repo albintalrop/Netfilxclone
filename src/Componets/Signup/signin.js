@@ -1,37 +1,25 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import "../Signup/signup.css";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Firebase";
-export default function Singnuppage() {
-    // const emailRef =useRef(null);
-    // const passwordRef=useRef(null)
-    // const register =(e) =>  {
-    //   e.preventDefualt()
-    //   auth.createUserwithEmailAndPassword(
-    //     emailRef.current.value,
-    //     passwordRef.current.value
-    //   ).then((authUser)=>{
-    //     console.log(authUser)
-
-    // }).catch((error)=>{
-    //   alert(error.messsege)
-    // })
-    // const signIn=(e) =>  {
-    //   e.preventDefault();
-    //   console.log("hello");
-    // }
+import { userContext } from "../Context";
+export default function Signin() {
+    const { user,setUser } = useContext(userContext);
     const [loginemail, setLoginEmail] = useState("");
     const [loginpassword, setLoginPassword] = useState("");
     const [err, setErr] = useState("");
+    const [errmsg, setErrmsg] = useState("");
 
     const navigate = useNavigate();
     const Login = () => {
         signInWithEmailAndPassword(auth, loginemail, loginpassword)
             .then((userCredential) => {
                 // Signed in
-                const user = userCredential.user;
-                // setUser(user)
+
+                setUser(userCredential.user.uid);
+             
+
                 navigate("/home");
                 // ...
             })
@@ -41,6 +29,7 @@ export default function Singnuppage() {
                 setErr(errorMessage);
             });
     };
+    console.log(user, "RRRRR");
 
     return (
         <div className="main">
@@ -70,6 +59,7 @@ export default function Singnuppage() {
                         onChange={(e) => setLoginPassword(e.target.value)}
                     />
                     <div
+                        className="button"
                         type="submit"
                         onClick={() => {
                             Login();

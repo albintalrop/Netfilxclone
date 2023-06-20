@@ -1,12 +1,14 @@
 import "./login.css";
-import React, { useState } from "react";
-import Signuppage from "../Signup/Singnuppage";
+import React, { useContext, useState } from "react";
+import Signuppage from "../Signup/signin";
 import { useNavigate } from "react-router-dom";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Firebase";
+// import { userContext } from "../Context";
 
 export default function Loginpage() {
+//    const {user,setUser}= useContext(userContext)
     const [signIn, setSignin] = useState(false);
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
@@ -16,8 +18,8 @@ export default function Loginpage() {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in
-                const user = userCredential.user;
-                console.log(user, "lll");
+                const useritem = userCredential.user;
+                // setUser(useritem)
                 navigate("/signin");
 
                 // ...
