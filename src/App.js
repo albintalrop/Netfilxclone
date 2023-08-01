@@ -22,12 +22,12 @@ function App() {
         <>
             <Router>
                 <Routes>
-                    <Route
+                    {/* <Route
                         path="/"
                         element={
                           <Context />
                         }
-                    />
+                    /> */}
 
                     <Route path="/signup"  element={<Loginpage />} />
 
