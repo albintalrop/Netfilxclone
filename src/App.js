@@ -29,7 +29,7 @@ function App() {
                         }
                     />
 
-                    <Route path="/signuppage"  element={<Loginpage />} />
+                    <Route path="/signup"  element={<Loginpage />} />
 
                     <Route path="/home" element={<Home />} />
                 </Routes>

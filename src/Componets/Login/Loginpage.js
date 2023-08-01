@@ -41,7 +41,7 @@ export default function Loginpage() {
                         src={require("../../images/Netflixlogo.png")}
                     />
                     <button
-                        onClick={() => navigate("/signin")}
+                        onClick={() => navigate("/")}
                         className="loginscreen_button"
                     >
                         signup
